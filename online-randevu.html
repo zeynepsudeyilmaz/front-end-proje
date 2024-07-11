@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Belediye | Online Randevu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="./index.html">E-Belediye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSection" aria-controls="navbarSection" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSection">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hakkimizda" role="button" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./index.html#vizyon">Vizyon</a>
+                        <a class="dropdown-item" href="./index.html#misyon">Misyon</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hizmetlerimiz" role="button" data-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./acil-hizmetler.html">Acil Durum Hizmetleri</a>
+                        <a class="dropdown-item" href="./cevresel-hizmetler.html">Çevresel Hizmetler</a>
+                        <a class="dropdown-item" href="./kayıp-esya.html">Kayıp ve Buluntu Eşya</a>
+                        <a class="dropdown-item" href="./online-randevu.html">Online Randevu</a>
+                        <a class="dropdown-item" href="./projeler.html">Projeler</a>
+                        <a class="dropdown-item" href="./topluluk-hizmetleri.html">Topluluk Hizmetleri</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#haberlerveduyurular">Duyurular ve Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#iletisim">İletişim</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary mr-3" id="randevu-btn">Randevu Al</button>
+                </li>
+                <li class="nav-item mr-3">
+                    <i class="fas fa-user" id="user" data-toggle="modal" data-target="#userModal"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalTitle">Giriş Yap</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="giris-kayit" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                                aria-controls="login" aria-selected="true">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                                aria-controls="register" aria-selected="false">Kayıt Ol</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="giris-kayit-content">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin">
+                                </div>
+                                <button type="button" class="btn btn-primary">Giriş Yap</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="registerNameSurname">Adınız Soyadınız</label>
+                                    <input type="text" class="form-control" id="registerNameSurname" placeholder="Adınızı soyadınızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerTC">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="registerTC" placeholder="TC kimlik numaranızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Şifre belirleyin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPhone">Telefon Numarası</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="Telefon numaranızı girin">
+                                </div>
+                                <button type="button" class="btn btn-success">Kayıt Ol</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">E-Belediye Online Randevu Sistemi</h2>
+        <form id="randevuForm">
+            <div class="form-group">
+                <label for="hizmet">Hizmet Seçiniz:</label>
+                <select id="hizmet" name="hizmet" class="form-control">
+                    <option value="">Hizmet Seçiniz</option>
+                    <option value="nufus">Nüfus İşlemleri</option>
+                    <option value="vergi">Vergi İşlemleri</option>
+                    <option value="ruhsat">Ruhsat İşlemleri</option>
+                    <option value="belediye">Belediye Hizmetleri</option>
+                    <option value="kultur">Kültür ve Sanat Hizmetleri</option>
+                    <option value="egitim">Eğitim Hizmetleri</option>
+                    <option value="saglik">Sağlık Hizmetleri</option>
+                    <option value="ulaşim">Ulaşım Hizmetleri</option>
+                    <option value="cevre">Çevre Hizmetleri</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="tarih">Randevu Tarihi:</label>
+                <input type="date" id="tarih" name="tarih" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="saat">Randevu Saati:</label>
+                <input type="time" id="saat" name="saat" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label>Randevuyu Yakınız İçin mi Alıyorsunuz?</label><br>
+                <label>
+                    <input type="radio" name="yakin" value="evet"> Evet
+                </label>
+                <label>
+                    <input type="radio" name="yakin" value="hayir"> Hayır
+                </label>
+            </div>
+    
+            <div id="yakinForm" style="display: none;">
+                <div class="form-group">
+                    <label for="adSoyad">Ad Soyad:</label>
+                    <input type="text" id="adSoyad" name="adSoyad" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="tc">TC Kimlik Numarası:</label>
+                    <input type="text" id="tc" name="tc" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="eposta">E-posta:</label>
+                    <input type="email" id="eposta" name="eposta" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="telefon">Telefon Numarası:</label>
+                    <input type="tel" id="telefon" name="telefon" class="form-control">
+                </div>
+            </div>
+    
+            <button type="submit" class="btn btn-primary btn-block" id="randevualmabtn">Randevu Al</button>
+        </form>
+    </div>
+    
+    
+    
+    
+
+    
+    <!-- Footer start -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Navigasyon Linkleri -->
+                <div class="col-md-4 text-left mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="./index.html" class="nav-link">Anasayfa</a>
+                            <a href="./index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                            <a href="./index.html#hizmetlerimiz" class="nav-link">Hizmetler</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="./index.html#haberlerveduyurular" class="nav-link">Duyurular ve Haberler</a>
+                            <a href="./index.html#iletisim" class="nav-link">İletişim</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="col-md-4 text-center mt-5">
+                    <div> &copy; 2024 E-Belediye. Tüm Hakları Saklıdır.</div>
+                </div>
+                <!-- İletişim Bilgisi -->
+                <div class="col-md-4 text-right mt-5">
+                    <div><i class="fa fa-envelope mr-2"></i>info@ebelediye.com</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="./assets/javascript/main.js"></script>
+    <script src="./assets/javascript/online-randevu.js"></script>
+</body>
+</html>

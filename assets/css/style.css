@@ -1,0 +1,210 @@
+/* Genel kodlar */
+
+body {
+    background-color: #F8F9FA;
+    color: #343A40;
+}
+
+.navbar {
+    background-color: #007BFF;
+}
+.navbar-brand {
+    color:#FFFFFF;
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  }
+.navbar .nav-link {
+    color:#FFFFFF;
+}
+.navbar .nav-link:hover {
+    background-color: #0056B3;
+    color:#FFFFFF
+}
+.btn {
+    color: #FFFFFF;
+}
+.btn-primary {
+    background-color: #28A745; 
+    border-color: #28A745; 
+    border-radius: 20px;
+}
+#user {
+    color: #ffffff;
+    cursor: pointer;
+}
+#hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: black;
+    position: relative;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #007BFF;
+}
+.footer .nav-link {
+    color: #FFFFFF;
+}
+.copyright,
+.contact-info{
+    color: #FFFFFF;
+}
+#mapFrame{
+    height:400px;
+    width:100%;
+    border:0;
+}
+#hakkimizda {
+    background-color: #E9EEF2;
+    color:#333333;
+}
+#vizyon{
+    background-color: #3498db;
+    color: #ffffff;
+}
+#misyon{
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+/* Acil Durum Kodları */
+#accordion .card-body {
+    background-color: #F8F9FA;
+    color: #343A40;
+}
+#accordion .card-header {
+    background-color: #F8F9FA;
+    color: #FFFFFF;
+}
+.list-grp {
+    border-bottom:none
+}
+#emergency-no .card-body{
+    background-color: #F8F9FA;
+    color: #343A40;
+}
+#emergency-no .card-header {
+    background-color: #007BFF;
+    color: #FFFFFF;
+}
+
+/* Çevresel Hizmetler kodları */
+
+#atiktesis-jumb{
+    background-color: #E9EEF2;
+    color:#333333;
+}
+#atik-tesis-turleri{
+    background-color: #3498db;
+    color: #ffffff;
+}
+#cevresel-yonetim-politikalari{
+    background-color: #27ae60;
+    color: #ffffff;
+}
+#gelecek-vizyon{
+    background-color: #b3cde0;
+    color: #333333;
+}
+.tablo-icerik{
+    background-color: #F8F9FA;
+    color: #343A40;
+}
+.tablo-baslik {
+    background-color: #007BFF;
+    color: #FFFFFF;
+}
+
+/* Hava durumu kodları */
+#weatherCard {
+    max-width: 400px;
+    height: 476px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #b3cde0, #6497b1);
+  }
+  
+#weatherCard .card-body {
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #b3cde0);
+  }
+  
+.input-group-prepend .input-group-text,
+.input-group-append .input-group-text {
+    background-color: #b3cde0; 
+    border: none;
+    border-radius: 50%;
+    color: #007bff;
+  }
+  
+#cityInput {
+    border-bottom: 2px solid #6497b1;
+    border-radius: 0px;
+    background-color: #ffffff;
+  }
+  
+#search-icon {
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+#weatherInfo .weather-info-item {
+    margin: 10px 0;
+  }
+  
+#weather-current-condition-icon-img {
+    width: 100px;
+    height: auto;
+  }
+  
+#weather-location-name,
+#weather-current-temp_c,
+#weather-current-humidity,
+#weather-current-wind_kph {
+    color: #00796b;
+  }
+  
+
+  /* Kayıp eşya kodları */
+
+#kayip-esya-jumbotron{
+    background-image: url("https://webcmsadb.tav.aero/uploads/599be2ba6483caa2617acd58/dynamic-fields/images/terminal-servisleri_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+  }
+
+#kayip-esya-jumbotron h1{
+    color: #000;
+}
+#kayip-esya-jumbotron p{
+    color: #000;
+}

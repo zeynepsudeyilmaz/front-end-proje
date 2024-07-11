@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Belediye | Çevresel Hizmetler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="./index.html">E-Belediye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSection" aria-controls="navbarSection" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSection">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hakkimizda" role="button" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./index.html#vizyon">Vizyon</a>
+                        <a class="dropdown-item" href="./index.html#misyon">Misyon</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./acil-hizmetler.html">Acil Durum Hizmetleri</a>
+                        <a class="dropdown-item" href="./cevresel-hizmetler.html">Çevresel Hizmetler</a>
+                        <a class="dropdown-item" href="./kayıp-esya.html">Kayıp ve Buluntu Eşya</a>
+                        <a class="dropdown-item" href="./online-randevu.html">Online Randevu</a>
+                        <a class="dropdown-item" href="./projeler.html">Projeler</a>
+                        <a class="dropdown-item" href="./topluluk-hizmetleri.html">Topluluk Hizmetleri</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#haberlerveduyurular">Duyurular ve Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#iletisim">İletişim</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+              <li class="nav-item">
+                  <button type="button" class="btn btn-primary mr-3" id="randevu-btn">Randevu Al</button>
+              </li>
+              <li class="nav-item mr-3">
+                <i class="fas fa-user" id="user" data-toggle="modal" data-target="#userModal"></i>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="userModalTitle">Giriş Yap</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <ul class="nav nav-tabs" id="giris-kayit" role="tablist">
+                      <li class="nav-item">
+                          <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                              aria-controls="login" aria-selected="true">Giriş Yap</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                              aria-controls="register" aria-selected="false">Kayıt Ol</a>
+                      </li>
+                  </ul>
+                  <div class="tab-content" id="giris-kayit-content">
+                      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                          <form>
+                              <div class="form-group">
+                                  <label for="loginEmail">E-posta</label>
+                                  <input type="email" class="form-control" id="loginEmail" placeholder="E-postanızı girin">
+                              </div>
+                              <div class="form-group">
+                                  <label for="loginPassword">Şifre</label>
+                                  <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin">
+                              </div>
+                              <button type="button" class="btn btn-primary">Giriş Yap</button>
+                          </form>
+                      </div>
+                      <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                          <form>
+                              <div class="form-group">
+                                  <label for="registerNameSurname">Adınız Soyadınız</label>
+                                  <input type="text" class="form-control" id="registerNameSurname" placeholder="Adınızı soyadınızı girin">
+                              </div>
+                              <div class="form-group">
+                                  <label for="registerTC">TC Kimlik Numarası</label>
+                                  <input type="text" class="form-control" id="registerTC" placeholder="TC kimlik numaranızı girin">
+                              </div>
+                              <div class="form-group">
+                                  <label for="registerEmail">E-posta</label>
+                                  <input type="email" class="form-control" id="registerEmail" placeholder="E-postanızı girin">
+                              </div>
+                              <div class="form-group">
+                                  <label for="registerPassword">Şifre</label>
+                                  <input type="password" class="form-control" id="registerPassword" placeholder="Şifre belirleyin">
+                              </div>
+                              <div class="form-group">
+                                  <label for="registerPhone">Telefon Numarası</label>
+                                  <input type="tel" class="form-control" id="registerPhone" placeholder="Telefon numaranızı girin">
+                              </div>
+                              <button type="button" class="btn btn-success">Kayıt Ol</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="jumbotron" id="atiktesis-jumb">
+            <h1 class="display-4">Atık Tesisleri ve Çevresel Yönetim</h1>
+            <p class="lead">Belediyemizin sürdürülebilir kalkınma hedeflerine ulaşmasında önemli bir rol oynayan atık tesisleri, şehrin çevresel yönetim stratejisinin temel taşlarından biridir.</p>
+            <hr class="my-4">
+            <p>Atıkların doğru şekilde yönetilmesini sağlayarak çevreyi koruma, kaynakları verimli kullanma ve sürdürülebilir bir gelecek için adım atmamıza olanak tanır.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="card" id="weatherCard">
+            <div class="card-body">
+              <div class="form-group" id="weatherForm">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-location-dot"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="cityInput" placeholder="Şehir adı girin">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="search-icon"><i class="fas fa-magnifying-glass"></i></span>
+                  </div>
+                </div>
+              </div>  
+              <div id="weatherInfo" class="mt-4">
+                <div class="text-center">
+                  <div id="weather-location-name" class="weather-info-item h4"></div>
+                  <div id="weather-current-condition-icon" class="weather-info-item">
+                    <img id="weather-current-condition-icon-img" />
+                  </div>
+                  <div class="weather-info-item mt-3">
+                    <span id="weather-current-temp_c" class="h5"></span>
+                    <span class="h5">°C</span>
+                  </div>
+                  <div class="weather-info-item mt-5">
+                    <span id="weather-current-humidity"></span>
+                    <span>% Nem</span>
+                  </div>
+                  <div class="weather-info-item mt-5">
+                    <span id="weather-current-wind_kph"></span>
+                    <span>km/h Rüzgar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card" id="atik-tesis-turleri">
+            <img src="./assets/images/cevresel.jpg" class="card-img-top" alt="Atık Tesisleri">
+            <div class="card-body">
+              <h3 class="card-title">Atık Tesis Türleri</h3>
+              <p class="card-text">Belediyemiz genelindeki atık tesisleri, farklı ihtiyaçlara ve atık türlerine göre çeşitlenmiştir.</p>
+              <ul class="list-unstyled">
+                <li><strong>Katı Atık Bertaraf Tesisleri:</strong> Şehrin çöp yönetimini sağlayan modern tesislerdir.</li>
+                <li><strong>Geri Dönüşüm Tesisleri:</strong> Atıkların geri dönüşümüne yönelik tesislerdir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100" id="cevresel-yonetim-politikalari">
+            <div class="card-body">
+              <h3 class="card-title">Çevresel Yönetim Politikaları</h3>
+              <p class="card-text">Belediyemiz, çevre koruma ve sürdürülebilirlik alanında kararlı bir şekilde ilerlemektedir.</p>
+              <h5>Atık Azaltımı ve Geri Dönüşüm</h5>
+              <p><strong>Atık Azaltımı: </strong>Tüketim alışkanlıklarını değiştirme, sürdürülebilir ürünlerin teşvik edilmesi ve atık oluşumunun en aza indirilmesi için kampanyalar düzenlenmektedir.</p>
+              <p><strong>Geri Dönüşüm: </strong>Kağıt, plastik, metal ve organik atıkların ayrıştırılması ve geri kazanımının teşvik edilmesi için belediye genelinde geri dönüşüm programları yürütülmektedir.</p>
+              <h5>Enerji Verimliliği ve Sürdürülebilirlik</h5>
+              <p><strong>Enerji Verimliliği:</strong>Belediye binalarında enerji verimliliğini artırmak için yenilenebilir enerji kaynakları kullanımı teşvik edilmekte, enerji tüketimini azaltıcı politikalar geliştirilmektedir.</p>
+              <p><strong>Sürdürülebilirlik: </strong>Şehir planlamasında sürdürülebilirlik ilkeleri gözetilmekte, yeşil alanların korunması ve artırılması, çevre dostu ulaşım sistemlerinin teşviki gibi politikalar uygulanmaktadır.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <div class="card" id="gelecek-vizyon">
+            <div class="card-body">
+              <h3 class="card-title">Geleceğe Yönelik Vizyon</h3>
+              <p class="card-text">Belediyemiz, şehrimizi sürdürülebilir bir yaşam merkezi haline getirmek için aşağıdaki vizyonla hareket etmektedir:</p>
+              <p><strong>Çevresel Kalite: </strong>Şehrimizin hava kalitesini artırmak, su kaynaklarını korumak ve biyoçeşitliliği desteklemek için aktif önlemler alınmaktadır.</p>
+              <p><strong>Eğitim ve Farkındalık: </strong>Toplumun çevre konularında bilinçlenmesini sağlamak için eğitim programları düzenlenmekte ve çevresel farkındalık artırılmaktadır.</p>
+              <p><strong>Teknoloji ve İnovasyon:</strong>Yenilikçi çözümler ve teknolojiler kullanılarak çevre dostu uygulamaların hayata geçirilmesi desteklenmektedir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <div class="container mt-5">
+      <h1 class="mb-4">Atık Tesisleri</h1>
+      <div class="table-responsive mt-4">
+        <table class="table table-bordered" id="waste-facilities-table">
+          <thead>
+            <tr>
+              <th class="tablo-baslik">Tesis Adı</th>
+              <th class="tablo-baslik">Durum</th>
+              <th class="tablo-baslik">Adres</th>
+              <th class="tablo-baslik">Mahalle</th>
+              <th class="tablo-baslik">İlçe</th>
+              <th class="tablo-baslik">Bölge</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Footer start -->
+    <footer class="footer mt-5">
+      <div class="container">
+          <div class="row">
+              <!-- Navigasyon Linkleri -->
+              <div class="col-md-4 text-left mt-3">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <a href="./index.html" class="nav-link">Anasayfa</a>
+                          <a href="./index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                          <a href="./index.html#hizmetlerimiz" class="nav-link">Hizmetler</a>
+                      </div>
+                      <div class="col-md-6">
+                          <a href="./index.html#haberlerveduyurular" class="nav-link">Duyurular ve Haberler</a>
+                          <a href="./index.html#iletisim" class="nav-link">İletişim</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Copyright -->
+              <div class="col-md-4 text-center mt-5">
+                  <div> &copy; 2024 E-Belediye. Tüm Hakları Saklıdır.</div>
+              </div>
+              <!-- İletişim Bilgisi -->
+              <div class="col-md-4 text-right mt-5">
+                  <div><i class="fa fa-envelope mr-2"></i>info@ebelediye.com</div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <script src="./assets/javascript/main.js"></script>
+  <script src="./assets/javascript/cevresel-hizmetler.js"></script>
+
+</body>
+</html>

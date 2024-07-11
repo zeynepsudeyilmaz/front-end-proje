@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Belediye | Acil Hizmetler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="./index.html">E-Belediye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSection" aria-controls="navbarSection" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSection">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hakkimizda" role="button" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/index.html#hakkimizda#vizyon">Vizyon</a>
+                        <a class="dropdown-item" href="/index.html#hakkimizda"#misyon>Misyon</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="/index.html#hakkimizda#hizmetler" role="button" data-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./acil-hizmetler.html">Acil Durum Hizmetleri</a>
+                        <a class="dropdown-item" href="./cevresel-hizmetler.html">Çevresel Hizmetler</a>
+                        <a class="dropdown-item" href="./kayıp-esya.html">Kayıp ve Buluntu Eşya</a>
+                        <a class="dropdown-item" href="./online-randevu.html">Online Randevu</a>
+                        <a class="dropdown-item" href="./projeler.html">Projeler</a>
+                        <a class="dropdown-item" href="./topluluk-hizmetleri.html">Topluluk Hizmetleri</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html#hakkimizda#haberlerveduyurular">Duyurular ve Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#iletisim">İletişim</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary mr-3" id="randevu-btn">Randevu Al</button>
+                </li>
+                <li class="nav-item mr-3">
+                    <i class="fas fa-user" id="user" data-toggle="modal" data-target="#userModal"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalTitle">Giriş Yap</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="giris-kayit" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                                aria-controls="login" aria-selected="true">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                                aria-controls="register" aria-selected="false">Kayıt Ol</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="giris-kayit-content">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin">
+                                </div>
+                                <button type="button" class="btn btn-primary">Giriş Yap</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="registerNameSurname">Adınız Soyadınız</label>
+                                    <input type="text" class="form-control" id="registerNameSurname" placeholder="Adınızı soyadınızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerTC">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="registerTC" placeholder="TC kimlik numaranızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Şifre belirleyin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPhone">Telefon Numarası</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="Telefon numaranızı girin">
+                                </div>
+                                <button type="button" class="btn btn-success">Kayıt Ol</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapse start -->
+    <div class="container mt-5">
+        <h1 class="text-center mt-5">Şehirde Sunulan Acil Durum Hizmetleri ve Önlemler</h1>
+        <p class="text-center mt-4">Şehrimiz, vatandaşlarımızın güvenliği ve sağlığı için çeşitli acil durum senaryolarına karşı kapsamlı bir hazırlık yapmaktadır. İşte şehrimizde sunulan acil durum hizmetleri ve alınan önlemler hakkında detaylı bilgiler:</p>
+        <div id="accordion" class="my-4">
+            <!-- Sağlık Hizmetleri -->
+            <div class="card">
+            <div class="card-header headings" id="headingOne">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Sağlık Hizmetleri
+                </button>
+                </h2>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizde, Şehrimizde, 25 adet sağlık kuruluşu bulunmaktadır. Bu kuruluşlar, sağlık hizmetlerinin yanı sıra acil durum müdahaleleri konusunda da donanımlıdır. Ambulans hizmetlerimiz, 7/24 hizmet vermekte olup acil durumlarda hızlı müdahale için hazır beklemektedir. Şehrimizde toplam 50 ambulans bulunmakta ve tüm ambulanslar tam donanımlı olarak hizmet vermektedir. Belediyemize bağlı hastanelerin acil servisleri, her türlü sağlık sorununa anında müdahale edecek şekilde donatılmıştır. Deneyimli sağlık personelimiz, acil durumlarda ihtiyaç duyduğunuz tıbbi desteği sağlamak için sürekli olarak eğitim almakta ve güncel müdahale teknikleriyle donatılmaktadır. Sağlık hizmetlerimiz hakkında daha fazla bilgi almak ve acil durumlarda destek almak için bizimle iletişime geçebilirsiniz.</p>
+                <div id="saglik-tablo"></div>
+            </div>
+            </div>
+            </div>
+        
+            <!-- İtfaiye Hizmetleri -->
+            <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    İtfaiye Hizmetleri
+                </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizde, 10 farklı itfaiye istasyonu bulunmaktadır. Bu istasyonlarda toplam 200 itfaiye personeli görev yapmaktadır. İtfaiye ekiplerimiz, yangın söndürme, kurtarma operasyonları ve diğer acil durum müdahalelerinde etkin bir şekilde çalışmaktadır. İtfaiye araçlarımız modern teknolojiyle donatılmış olup, yangın ve kurtarma operasyonlarında hızlı ve etkili müdahale sağlanmaktadır. Halkımızın güvenliğini en üst seviyede tutmak amacıyla düzenli tatbikatlar ve eğitim programları düzenlenmektedir. Ayrıca, yangın öncesi ve sonrası alınması gereken önlemler konusunda halkımızı bilinçlendirme çalışmaları yürütülmektedir. İtfaiye hizmetlerimiz hakkında daha fazla bilgi almak ve acil durumlarda destek almak için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Deprem ve Afet Önlemleri -->
+            <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Deprem ve Afet Önlemleri
+                </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimiz, deprem ve diğer afet risklerine karşı özel önlemler almaktadır. Deprem anında halkın toplanabileceği güvenli noktalar belirlenmiş olup, bu noktalar düzenli olarak halkımıza duyurulmaktadır. Ayrıca, şehir genelinde bulunan binaların depreme dayanıklılığı mühendislerimiz tarafından sürekli olarak kontrol edilmekte ve gerekli güçlendirme çalışmaları yapılmaktadır. Afet durumlarında hızlı ve etkili müdahale sağlamak amacıyla kriz yönetim merkezi oluşturulmuş olup, bu merkez tüm ilgili birimlerle koordinasyon halinde çalışmaktadır. Halkımızı afetlere karşı bilinçlendirmek amacıyla düzenli eğitim ve tatbikatlar gerçekleştirilmektedir. Deprem ve afet önlemleri hakkında daha fazla bilgi almak ve güvenliğiniz için alınması gereken önlemler konusunda destek almak için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Jandarma ve Polis Hizmetleri -->
+            <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Jandarma ve Polis Hizmetleri
+                </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizdeki jandarma ve polis ekipleri, halkımızın güvenliğini sağlamak için 7/24 görev başındadır. Özellikle deprem, yangın gibi acil durumlarda, jandarma ve polis ekiplerimiz olay yerine en hızlı şekilde ulaşarak güvenlik sağlamakta ve gerektiğinde tahliye gibi önlemler almaktadır. Ekiplerimiz, modern ekipmanlarla donatılmış olup, acil durum müdahalelerinde hızlı ve etkili çözümler sunmaktadır. Ayrıca, şehrimizde düzenlenen güvenlik eğitimleri ve tatbikatlarla, vatandaşlarımızın acil durumlarda nasıl hareket etmeleri gerektiği konusunda bilinçlendirilmesi hedeflenmektedir. Jandarma ve polis hizmetlerimiz hakkında daha fazla bilgi almak ve acil durumlarda destek almak için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Kriz Yönetim Merkezi -->
+            <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Kriz Yönetim Merkezi
+                </button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizde, kriz anlarında koordinasyonu sağlamak amacıyla bir kriz yönetim merkezi faaliyet göstermektedir. Bu merkez, şehrimizin karşılaşabileceği farklı acil durum senaryolarına karşı hazırlıklı olmak ve halkımızın güvenliğini sağlamak için kurulmuştur. Kriz anında, merkez tüm ilgili birimlerle sürekli iletişim halinde olup, etkin bir şekilde müdahale planlarını uygulamaktadır. Ayrıca, kriz yönetim merkezimiz, kriz süreçlerini analiz ederek gelecekteki acil durumlara daha etkin bir şekilde hazırlanma amacı gütmektedir. Kriz yönetim merkezimiz hakkında daha fazla bilgi almak ve acil durumlarda destek almak için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Toplanma Alanları ve Güvenli Yollar -->
+            <div class="card">
+            <div class="card-header" id="headingSix">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Toplanma Alanları ve Güvenli Yollar
+                </button>
+                </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizde, deprem gibi acil durumlarda halkın toplanabileceği güvenli alanlar belirlenmiş olup, bu alanlar düzenli olarak güncellenmekte ve halkımıza duyurulmaktadır. Ayrıca, toplanma alanlarına ulaşım ve erişim yolları sürekli olarak bakım altında tutulmakta ve gerektiğinde iyileştirme çalışmaları yapılmaktadır. Bu sayede, acil durum anlarında halkımız güvenli bir şekilde toplanma alanlarına ulaşabilmekte ve gerekli müdahaleler sağlanabilmektedir. Toplanma alanları ve güvenli yollar hakkında daha fazla bilgi almak ve acil durum planlarımızı güçlendirmek için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Eğitim ve Bilinçlendirme Çalışmaları -->
+            <div class="card">
+            <div class="card-header" id="headingSeven">
+                <h2 class="mb-0">
+                <button class="btn btn-secondary collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    Eğitim ve Bilinçlendirme Çalışmaları
+                </button>
+                </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                <div class="card-body">
+                <p>Şehrimizde, halkımızı acil durumlara karşı bilinçlendirmek ve eğitmek amacıyla düzenli olarak eğitim ve bilinçlendirme çalışmaları yapılmaktadır. Bu çalışmalar, deprem tahliye prosedürleri, ilk yardım bilgileri, acil durum numaraları gibi konuları kapsamaktadır. Halkımızın afet durumlarında nasıl hareket etmeleri gerektiği konusunda bilinçlenmelerini sağlamak ve güvenliğini artırmak için çeşitli seminerler, tatbikatlar ve bilgilendirme kampanyaları düzenlenmektedir. Eğitim ve bilinçlendirme çalışmaları, şehrimizin acil durumlara karşı hazırlıklılığını artırmak ve halkımızın güvenliğini sağlamak adına önemli bir rol oynamaktadır. Bu çalışmalar hakkında daha fazla bilgi almak ve katılım sağlamak için bizimle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- acil durum numaraları start -->
+    <div class="container">
+        <div class="card text-center" id="emergency-no">
+            <div class="card-header">
+                Acil Durum Numaraları
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>112:</strong> Acil Durum Çağrı Merkezi
+                                <ul>
+                                    <li>Ambulans</li>
+                                    <li>İtfaiye</li>
+                                    <li>Polis</li>
+                                    <li>Jandarma</li>
+                                    <li>Sahil Güvenlik</li>
+                                    <li>Orman Yangını İhbar</li>
+                                    <li>Afet Arama Kurtarma</li>
+                                    <li>Trafik Polisi</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item"><strong>114:</strong> Zehir Danışma</li>
+                            <li class="list-group-item "><strong>121:</strong> Telefon Arıza İhbar</li>
+                            <li class="list-group-item"><strong>126:</strong> Kablo TV Arıza İhbar</li>
+                            <li class="list-group-item"><strong>131:</strong> Demiryolları İhbar</li>
+                            <li class="list-group-item"><strong>136:</strong> Gümrük Kaçakçılık İhbar</li>
+                            <li class="list-group-item"><strong>140:</strong> Terör İhbar</li>
+                            <li class="list-group-item"><strong>151:</strong> Kıyı Emniyeti</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>152:</strong> Petrol ve Doğalgaz Boru Hatları İhbar</li>
+                            <li class="list-group-item"><strong>153:</strong> Belediye / Zabıta</li>
+                            <li class="list-group-item"><strong>159:</strong> Karayolları İhbar</li>
+                            <li class="list-group-item"><strong>174:</strong> Gıda İhbar</li>
+                            <li class="list-group-item"><strong>175:</strong> Tüketici İhbar</li>
+                            <li class="list-group-item"><strong>181:</strong> Çevre İhbar</li>
+                            <li class="list-group-item"><strong>183:</strong> Aile İçi Şiddet</li>
+                            <li class="list-group-item"><strong>185:</strong> Su Arıza İhbar</li>
+                            <li class="list-group-item"><strong>186:</strong> Elektrik Arıza İhbar</li>
+                            <li class="list-group-item"><strong>187:</strong> Doğalgaz Arıza İhbar</li>
+                            <li class="list-group-item"><strong>189:</strong> Maliye İhbar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Footer start -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Navigasyon Linkleri -->
+                <div class="col-md-4 text-left mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="./index.html" class="nav-link">Anasayfa</a>
+                            <a href="./index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                            <a href="./index.html#hizmetlerimiz" class="nav-link">Hizmetler</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="./index.html#haberlerveduyurular" class="nav-link">Duyurular ve Haberler</a>
+                            <a href="./index.html#iletisim" class="nav-link">İletişim</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="col-md-4 text-center mt-5">
+                    <div> &copy; 2024 E-Belediye. Tüm Hakları Saklıdır.</div>
+                </div>
+                <!-- İletişim Bilgisi -->
+                <div class="col-md-4 text-right mt-5">
+                    <div><i class="fa fa-envelope mr-2"></i>info@ebelediye.com</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>

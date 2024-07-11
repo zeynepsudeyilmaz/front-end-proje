@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Belediye | Topluluk Hizmetleri</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="./index.html">E-Belediye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSection" aria-controls="navbarSection" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSection">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hakkimizda" role="button" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./index.html#vizyon">Vizyon</a>
+                        <a class="dropdown-item" href="./index.html#misyon">Misyon</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hizmetlerimiz" role="button" data-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./acil-hizmetler.html">Acil Durum Hizmetleri</a>
+                        <a class="dropdown-item" href="./cevresel-hizmetler.html">Çevresel Hizmetler</a>
+                        <a class="dropdown-item" href="./kayıp-esya.html">Kayıp ve Buluntu Eşya</a>
+                        <a class="dropdown-item" href="./online-randevu.html">Online Randevu</a>
+                        <a class="dropdown-item" href="./projeler.html">Projeler</a>
+                        <a class="dropdown-item" href="./topluluk-hizmetleri.html">Topluluk Hizmetleri</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#haberlerveduyurular">Duyurular ve Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#iletisim">İletişim</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary mr-3" id="randevu-btn">Randevu Al</button>
+                </li>
+                <li class="nav-item mr-3">
+                    <i class="fas fa-user" id="user" data-toggle="modal" data-target="#userModal"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- User modal start -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalTitle">Giriş Yap</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="giris-kayit" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                                aria-controls="login" aria-selected="true">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                                aria-controls="register" aria-selected="false">Kayıt Ol</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="giris-kayit-content">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin">
+                                </div>
+                                <button type="button" class="btn btn-primary">Giriş Yap</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="registerNameSurname">Adınız Soyadınız</label>
+                                    <input type="text" class="form-control" id="registerNameSurname" placeholder="Adınızı soyadınızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerTC">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="registerTC" placeholder="TC kimlik numaranızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Şifre belirleyin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPhone">Telefon Numarası</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="Telefon numaranızı girin">
+                                </div>
+                                <button type="button" class="btn btn-success">Kayıt Ol</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="container mt-5">
+        <h2 class="text-center">Toplumsal Hizmetler</h2>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-1-1.jpeg" alt="Evsiz insan" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Evsizlere Yardım Programları</h5>
+                                <p>Belediyemiz, şehrimizdeki evsiz vatandaşlarımıza yönelik çeşitli yardım programları düzenlemektedir. Bu programlar kapsamında, barınma ve temel ihtiyaçların karşılanması için geçici konaklama ve gıda yardımı sağlanmaktadır. Ayrıca, sosyal hizmet profesyonelleri ve gönüllüler tarafından psikososyal destek ve iş bulma konusunda rehberlik sunulmaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEvsizler">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-2-1.jpg" alt="yarım eden insan" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Yoksullukla Mücadele Projeleri</h5>
+                                <p>Yoksullukla mücadelede belediyemiz, toplumsal dayanışmayı güçlendirmek ve ekonomik güçlük çeken ailelere destek olmak amacıyla çeşitli projeler yürütmektedir. Bu projeler arasında gıda yardımı, giyim desteği ve eğitim bursları gibi programlar bulunmaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalYoksulluk">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-3-1.webp" alt="konuşan iki insan" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Sosyal Rehabilitasyon Merkezleri</h5>
+                                <p>Madde bağımlılığı ve ruhsal sağlık sorunlarıyla mücadelede, belediyemiz yerel sosyal rehabilitasyon merkezleri aracılığıyla destek sağlamaktadır. Bu merkezler, bireylerin rehabilitasyon sürecinde ihtiyaç duydukları tıbbi ve psikososyal hizmetleri sunmakta ve topluma entegrasyonlarını desteklemektedir.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRehabilitasyon">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-4-1.jpeg" alt="konuşan insanlar" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Engelli Bireylere Destek Projeleri</h5>
+                                <p>Belediyemiz, engelli bireylerin topluma katılımlarını desteklemek ve yaşamlarını kolaylaştırmak için çeşitli projeler yürütmektedir. Bu projeler arasında engelli erişilebilirliği, eğitim ve istihdam desteği bulunmaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEngelli">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-5-1.webp" alt="bitki eken insanlar" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Çevre Koruma Projeleri</h5>
+                                <p>Belediyemiz, şehrimizin çevresel sürdürülebilirliğini artırmak ve doğal kaynakları korumak için çeşitli çevre projeleri yürütmektedir. Bu projeler arasında geri dönüşüm, yeşil alanların korunması ve çevre bilinci eğitimi yer almaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCevre">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-6-1.jpeg" alt="festivalde eğlenen kalabalık" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Kültürel Etkinlikler ve Festivaller</h5>
+                                <p>Belediyemiz, kültürel çeşitliliği desteklemek ve şehrimizin sosyal hayatını zenginleştirmek amacıyla çeşitli kültürel etkinlikler ve festivaller düzenlemektedir. Bu etkinlikler arasında sanat sergileri, konserler, tiyatro gösterileri ve yerel festivaller yer almaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalKultur">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-7-1.webp" alt="dokto ve kadın" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Sağlık Hizmetleri Projeleri</h5>
+                                <p>Belediyemiz, şehrimizin sağlık altyapısını güçlendirmek ve vatandaşlarımızın sağlık ihtiyaçlarını karşılamak için çeşitli sağlık hizmetleri projeleri yürütmektedir. Bu projeler arasında sağlık taramaları, aşı kampanyaları ve sağlık eğitimleri yer almaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaglik">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-8-1.webp" alt="kitapların üstünde kedi" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Yerel Ekonomi ve İşletme Destekleri</h5>
+                                <p>Belediyemiz, yerel işletmelerin büyümesini ve sürdürülebilirliğini desteklemek için çeşitli ekonomik projeler ve işletme destekleri sunmaktadır. Bu destekler arasında kredi imkanları, iş geliştirme programları ve pazarlama desteği bulunmaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEkonomi">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <img src="./assets/images/top-9-1.webp" alt="..." class="img-thumbnail">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Eğitim ve Gençlik Projeleri</h5>
+                                <p>Belediyemiz, genç nüfusumuzun eğitimine destek olmak ve onların gelişimini teşvik etmek amacıyla çeşitli eğitim projeleri ve gençlik etkinlikleri düzenlemektedir. Bu projeler arasında okul donanımları sağlama, burslar ve meslek edindirme programları yer almaktadır.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEgitim">Detaylar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modallar -->
+    <div class="modal fade" id="modalEvsizler" tabindex="-1" role="dialog" aria-labelledby="modalEvsizler" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEvsizlerTitle">Evsizlere Yardım Programları</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-1-2.jpeg" class="img-fluid mb-3" alt="sokakta oturan evsiz adam">
+                    <p>Belediyemiz, şehrimizdeki evsiz vatandaşlarımıza yönelik çeşitli yardım programları düzenlemektedir. Bu programlar kapsamında, barınma ve temel ihtiyaçların karşılanması için geçici konaklama ve gıda yardımı sağlanmaktadır. Ayrıca, sosyal hizmet profesyonelleri ve gönüllüler tarafından psikososyal destek ve iş bulma konusunda rehberlik sunulmaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalYoksulluk" tabindex="-1" role="dialog" aria-labelledby="modalYoksulluk" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalYoksullukTitle">Yoksullukla Mücadele Projeleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-2-2.webp" class="img-fluid mb-3" alt="birbirine destek olan iki kadın">
+                    <p>Yoksullukla mücadelede belediyemiz, toplumsal dayanışmayı güçlendirmek ve ekonomik güçlük çeken ailelere destek olmak amacıyla çeşitli projeler yürütmektedir. Bu projeler arasında gıda yardımı, giyim desteği ve eğitim bursları gibi programlar bulunmaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalRehabilitasyon" tabindex="-1" role="dialog" aria-labelledby="modalRehabilitasyon" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRehabilitasyonTitle">Sosyal Rehabilitasyon Merkezleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-3-2.webp" class="img-fluid mb-3" alt="yaşlı kadına yardım eden kadın">
+                    <p>Madde bağımlılığı ve ruhsal sağlık sorunlarıyla mücadelede, belediyemiz yerel sosyal rehabilitasyon merkezleri aracılığıyla destek sağlamaktadır. Bu merkezler, bireylerin rehabilitasyon sürecinde ihtiyaç duydukları tıbbi ve psikososyal hizmetleri sunmakta ve topluma entegrasyonlarını desteklemektedir.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalEngelli" tabindex="-1" role="dialog" aria-labelledby="modalEngelli" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEngelliTitle">Engelli Bireylere Destek Projeleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-4-2.webp" class="img-fluid mb-3" alt="görme engelli kız">
+                    <p>Belediyemiz, engelli bireylerin topluma katılımlarını desteklemek ve yaşamlarını kolaylaştırmak için çeşitli projeler yürütmektedir. Bu projeler arasında engelli erişilebilirliği, eğitim ve istihdam desteği bulunmaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCevre" tabindex="-1" role="dialog" aria-labelledby="modalCevre" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCevreTitle">Çevre Koruma Projeleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-5-2.peg.jpeg" class="img-fluid mb-3" alt="çöp toplayan çocuklar">
+                    <p>Belediyemiz, şehrimizin çevresel sürdürülebilirliğini artırmak ve doğal kaynakları korumak için çeşitli çevre projeleri yürütmektedir. Bu projeler arasında geri dönüşüm, yeşil alanların korunması ve çevre bilinci eğitimi yer almaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKultur" tabindex="-1" role="dialog" aria-labelledby="modalKultur" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalKulturTitle">Kültürel Etkinlikler ve Festivaller</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-6-2.webp" class="img-fluid mb-3" alt="konser">
+                    <p>Belediyemiz, kültürel çeşitliliği desteklemek ve şehrimizin sosyal hayatını zenginleştirmek amacıyla çeşitli kültürel etkinlikler ve festivaller düzenlemektedir. Bu etkinlikler arasında sanat sergileri, konserler, tiyatro gösterileri ve yerel festivaller yer almaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalSaglik" tabindex="-1" role="dialog" aria-labelledby="modalSaglik" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSaglikTitle">Sağlık Hizmetleri Projeleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-7-2.jpeg" class="img-fluid mb-3" alt="spor yapan insanlar">
+                    <p>Belediyemiz, şehrimizin sağlık altyapısını güçlendirmek ve vatandaşlarımızın sağlık ihtiyaçlarını karşılamak için çeşitli sağlık hizmetleri projeleri yürütmektedir. Bu projeler arasında sağlık taramaları, aşı kampanyaları ve sağlık eğitimleri yer almaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalEkonomi" tabindex="-1" role="dialog" aria-labelledby="modalEkonomi" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEkonomiTitle">Yerel Ekonomi ve İşletme Destekleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-8-2.jpg" class="img-fluid mb-3" alt="kafe">
+                    <p>Belediyemiz, yerel işletmelerin büyümesini ve sürdürülebilirliğini desteklemek için çeşitli ekonomik projeler ve işletme destekleri sunmaktadır. Bu destekler arasında kredi imkanları, iş geliştirme programları ve pazarlama desteği bulunmaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalEgitim" tabindex="-1" role="dialog" aria-labelledby="modalEgitim" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEgitimTitle">Eğitim ve Gençlik Projeleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/images/top-9-2.jpg" class="img-fluid mb-3" alt="ders çalışan küçük kız">
+                    <p>Belediyemiz, genç nüfusumuzun eğitimine destek olmak ve onların gelişimini teşvik etmek amacıyla çeşitli eğitim projeleri ve gençlik etkinlikleri düzenlemektedir. Bu projeler arasında okul donanımları sağlama, burslar ve meslek edindirme programları yer almaktadır.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer start -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Navigasyon Linkleri -->
+                <div class="col-md-4 text-left mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="./index.html" class="nav-link">Anasayfa</a>
+                            <a href="./index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                            <a href="./index.html#hizmetlerimiz" class="nav-link">Hizmetler</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="./index.html#haberlerveduyurular" class="nav-link">Duyurular ve Haberler</a>
+                            <a href="./index.html#iletisim" class="nav-link">İletişim</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="col-md-4 text-center mt-5">
+                    <div> &copy; 2024 E-Belediye. Tüm Hakları Saklıdır.</div>
+                </div>
+                <!-- İletişim Bilgisi -->
+                <div class="col-md-4 text-right mt-5">
+                    <div><i class="fa fa-envelope mr-2"></i>info@ebelediye.com</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>

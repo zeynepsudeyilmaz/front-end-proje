@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Belediye | Projeler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="./index.html">E-Belediye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSection" aria-controls="navbarSection" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSection">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hakkimizda" role="button" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./index.html#vizyon">Vizyon</a>
+                        <a class="dropdown-item" href="./index.html#misyon">Misyon</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./index.html#hizmetlerimiz" role="button" data-toggle="dropdown" aria-expanded="false">Hizmetler</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./acil-hizmetler.html">Acil Durum Hizmetleri</a>
+                        <a class="dropdown-item" href="./cevresel-hizmetler.html">Çevresel Hizmetler</a>
+                        <a class="dropdown-item" href="./kayıp-esya.html">Kayıp ve Buluntu Eşya</a>
+                        <a class="dropdown-item" href="./online-randevu.html">Online Randevu</a>
+                        <a class="dropdown-item" href="./projeler.html">Projeler</a>
+                        <a class="dropdown-item" href="./topluluk-hizmetleri.html">Topluluk Hizmetleri</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#haberlerveduyurular">Duyurular ve Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#iletisim">İletişim</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary mr-3" id="randevu-btn">Randevu Al</button>
+                </li>
+                <li class="nav-item mr-3">
+                    <i class="fas fa-user" id="user" data-toggle="modal" data-target="#userModal"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalTitle">Giriş Yap</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="giris-kayit" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab"
+                                aria-controls="login" aria-selected="true">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab"
+                                aria-controls="register" aria-selected="false">Kayıt Ol</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="giris-kayit-content">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin">
+                                </div>
+                                <button type="button" class="btn btn-primary">Giriş Yap</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="registerNameSurname">Adınız Soyadınız</label>
+                                    <input type="text" class="form-control" id="registerNameSurname" placeholder="Adınızı soyadınızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerTC">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="registerTC" placeholder="TC kimlik numaranızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">E-posta</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="E-postanızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Şifre</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Şifre belirleyin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPhone">Telefon Numarası</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="Telefon numaranızı girin">
+                                </div>
+                                <button type="button" class="btn btn-success">Kayıt Ol</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+  
+    <div class="container mt-5">
+        <h2 class="text-center">Projeler</h2>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <img class="card-img-top" src="./assets/images/projeler1.jpeg">
+                    </div>
+                    <div class="card-body">
+                        <h3>Belediye Hizmet Binası</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#belediyeHizmetBinaModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img-top" src="./assets/images/projeler2.jpeg">
+                    </div>
+                    <div class="card-body">
+                        <h3>Akıllı Atık Yönetim Sistemi</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#atikYonetimModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <img class="card-img-top" style="height: 450px;" src="./assets/images/projeler3.webp">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="mt-2">Akıllı Aydınlatma<br> Projesi</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#akilliAydinlatmaModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img-top" src="./assets/images/projeler4.jpeg">
+                    </div>
+                    <div class="card-body">
+                        <h3>Halk Bahçeleri ve Toplum Parkları</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#bahceParkModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <img class="card-img-top" src="./assets/images/projeler5.jpeg">
+                    </div>
+                    <div class="card-body">
+                        <h3>Gençlik Kafesi</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#genclikKafeModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <img class="card-img-top" src="./assets/images/projeler6.webp">
+                    </div>
+                    <div class="card-body">
+                        <h3>Şehir Kütüphanesi</h3>
+                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#sehirKutuphaneModal">
+                            Detaylar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modallar -->
+    <div class="modal fade" id="belediyeHizmetBinaModal" tabindex="-1" role="dialog" aria-labelledby="belediyeHizmetBinaModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Belediye Hizmet Binası</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Belediye Hizmet Binası Projesi, vatandaşlara daha iyi ve hızlı hizmet sunmak amacıyla hayata geçirilmiştir. Modern mimari tasarımı ve son teknoloji altyapısı ile dikkat çeken bu bina, belediye hizmetlerinin tek çatı altında toplandığı bir merkez olacaktır.</p>
+                
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Hizmet Kalitesini Artırma:</strong> Vatandaşların belediye hizmetlerine daha kolay erişimini sağlamak ve hizmet kalitesini yükseltmek.</li>
+                        <li><strong>Verimlilik:</strong> Belediye çalışanlarının daha verimli çalışabileceği modern ve ergonomik bir çalışma ortamı yaratmak.</li>
+                        <li><strong>Erişilebilirlik:</strong> Engelli vatandaşlar için erişilebilirlik standartlarına uygun alanlar oluşturmak.</li>
+                        <li><strong>Teknoloji Kullanımı:</strong> Dijital belediyecilik anlayışı ile hizmetlerin online platformlarda da sunulmasını sağlamak.</li>
+                    </ul>
+                    
+                    <h5>Bina Özellikleri</h5>
+                    <ul>
+                        <li><strong>Modern Mimari:</strong> Estetik ve fonksiyonel tasarımı ile dikkat çeken bir yapı.</li>
+                        <li><strong>Çevre Dostu:</strong> Enerji tasarrufu sağlayan ve çevre dostu malzemelerle inşa edilmiş.</li>
+                        <li><strong>Geniş Hizmet Alanları:</strong> Her birim için özel olarak tasarlanmış geniş ve ferah ofisler.</li>
+                        <li><strong>Toplantı ve Etkinlik Alanları:</strong> Toplantılar ve çeşitli etkinlikler için donanımlı salonlar.</li>
+                        <li><strong>Bekleme Alanları:</strong> Vatandaşların rahatça bekleyebileceği konforlu bekleme salonları.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>Planlama ve Tasarım:</strong> Mimarlar ve mühendisler tarafından yapılan detaylı planlama ve tasarım aşaması.</li>
+                        <li><strong>İnşaat:</strong> Temel atma ve inşaat süreçlerinin başlaması.</li>
+                        <li><strong>Donanım ve Dekorasyon:</strong> Bina içi donanımların yerleştirilmesi ve dekorasyon işlemlerinin tamamlanması.</li>
+                        <li><strong>Test ve Denetim:</strong> Binanın tüm sistemlerinin test edilmesi ve güvenlik denetimlerinin yapılması.</li>
+                        <li><strong>Açılış:</strong> Belediye Hizmet Binası'nın resmi açılışı ve hizmete başlaması.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Dijital Hizmetler:</strong> Daha fazla belediye hizmetinin dijital platformlara taşınması.</li>
+                        <li><strong>Vatandaş Eğitimleri:</strong> Vatandaşların belediye hizmetleri hakkında bilgilendirilmesi ve eğitilmesi için seminerler düzenlenmesi.</li>
+                        <li><strong>Topluluk Etkinlikleri:</strong> Halkın katılım gösterebileceği sosyal ve kültürel etkinlikler organize edilmesi.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="atikYonetimModal" tabindex="-1" role="dialog" aria-labelledby="atikYonetimModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="atikYonetimTitle">Akıllı Atık Yönetim Sistemi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Akıllı Atık Yönetim Sistemi Projesi, şehirdeki atık toplama süreçlerini optimize etmek ve geri dönüşüm oranlarını artırmak amacıyla hayata geçirilmiştir. Bu sistem, sensörler ve IoT teknolojileri kullanarak atık kutularının doluluk oranlarını takip eder ve toplama işlemlerini daha verimli hale getirir.</p>
+    
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Verimlilik Artışı:</strong> Atık toplama işlemlerini optimize ederek kaynakların daha verimli kullanılmasını sağlamak.</li>
+                        <li><strong>Çevre Koruma:</strong> Geri dönüşüm oranlarını artırarak çevreye verilen zararı azaltmak.</li>
+                        <li><strong>Maliyet Azaltma:</strong> Toplama ve taşıma maliyetlerini azaltarak belediyenin bütçesine katkıda bulunmak.</li>
+                        <li><strong>Teknoloji Kullanımı:</strong> IoT ve sensör teknolojileri ile atık yönetiminde yenilikçi çözümler sunmak.</li>
+                    </ul>
+                    
+                    <h5>Sistem Özellikleri</h5>
+                    <ul>
+                        <li><strong>Sensör Tabanlı İzleme:</strong> Atık kutularının doluluk oranlarını gerçek zamanlı olarak izleme.</li>
+                        <li><strong>Optimizasyon Algoritmaları:</strong> Atık toplama rotalarını optimize eden akıllı algoritmalar.</li>
+                        <li><strong>Veri Analitiği:</strong> Atık toplama verilerini analiz ederek daha iyi yönetim stratejileri geliştirme.</li>
+                        <li><strong>Mobil Uygulama:</strong> Toplayıcılar için rotaları ve doluluk oranlarını gösteren kullanıcı dostu mobil uygulama.</li>
+                        <li><strong>Gerçek Zamanlı Bildirimler:</strong> Doluluk oranlarına göre gerçek zamanlı toplama bildirimleri.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>İhtiyaç Analizi:</strong> Şehirdeki atık yönetim ihtiyaçlarının belirlenmesi ve analiz edilmesi.</li>
+                        <li><strong>Sistem Tasarımı:</strong> Sensör ve yazılım sistemlerinin tasarlanması.</li>
+                        <li><strong>Uygulama ve Entegrasyon:</strong> Sensörlerin atık kutularına yerleştirilmesi ve sistemin devreye alınması.</li>
+                        <li><strong>Test ve Optimizasyon:</strong> Sistemin test edilmesi ve performans optimizasyonlarının yapılması.</li>
+                        <li><strong>Kullanıma Sunma:</strong> Akıllı Atık Yönetim Sistemi'nin resmi olarak kullanıma sunulması.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Genişletme:</strong> Sistem kapsamının genişletilerek daha fazla bölgede uygulanması.</li>
+                        <li><strong>Veri Tabanlı Yönetim:</strong> Toplanan verilerle atık yönetimi stratejilerinin sürekli olarak iyileştirilmesi.</li>
+                        <li><strong>Toplum Bilinçlendirme:</strong> Halkın atık yönetimi konusunda bilinçlendirilmesi için eğitim kampanyaları düzenlenmesi.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="akilliAydinlatmaModal" tabindex="-1" role="dialog" aria-labelledby="akilliAydinlatmaModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="akilliAydınlatmaTitle">Akıllı Aydınlatma Projesi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Akıllı Aydınlatma Sistemi Projesi, şehir genelinde enerji tasarrufu sağlamak ve aydınlatma hizmetlerini daha verimli hale getirmek amacıyla hayata geçirilmiştir. Bu sistem, sensörler ve IoT teknolojileri kullanarak aydınlatma ihtiyaçlarını optimize eder ve gereksiz enerji tüketimini azaltır.</p>
+    
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Enerji Tasarrufu:</strong> Gereksiz aydınlatmayı azaltarak enerji tüketimini en aza indirmek.</li>
+                        <li><strong>Verimlilik:</strong> Aydınlatma sistemlerini daha verimli kullanarak maliyetleri düşürmek.</li>
+                        <li><strong>Çevre Koruma:</strong> Enerji tasarrufu sayesinde karbon ayak izini azaltmak.</li>
+                        <li><strong>Güvenlik:</strong> Akıllı aydınlatma ile şehirdeki güvenlik seviyesini artırmak.</li>
+                    </ul>
+                    
+                    <h5>Sistem Özellikleri</h5>
+                    <ul>
+                        <li><strong>Hareket Sensörleri:</strong> İnsan hareketini algılayarak aydınlatma seviyesini ayarlayan sensörler.</li>
+                        <li><strong>Uzaktan Kontrol:</strong> Aydınlatma sistemlerinin uzaktan izlenmesi ve kontrol edilmesi.</li>
+                        <li><strong>Otomatik Ayarlama:</strong> Günün saatine ve hava koşullarına göre otomatik aydınlatma ayarı.</li>
+                        <li><strong>Enerji Raporlama:</strong> Enerji tüketimini izleyen ve raporlayan sistemler.</li>
+                        <li><strong>Entegre Veri Analitiği:</strong> Aydınlatma verilerini analiz ederek daha iyi yönetim stratejileri geliştirme.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>Planlama ve Tasarım:</strong> Akıllı aydınlatma sisteminin planlanması ve tasarlanması.</li>
+                        <li><strong>Kurulum:</strong> Sensörlerin ve aydınlatma donanımının kurulması.</li>
+                        <li><strong>Entegrasyon:</strong> Sistemin mevcut aydınlatma altyapısına entegrasyonu.</li>
+                        <li><strong>Test ve Ayarlama:</strong> Sistemin test edilmesi ve gerekli ayarlamaların yapılması.</li>
+                        <li><strong>Kullanıma Alma:</strong> Akıllı Aydınlatma Sistemi'nin resmi olarak hizmete sunulması.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Sistem Genişletme:</strong> Sistemin daha fazla bölgede uygulanması ve yaygınlaştırılması.</li>
+                        <li><strong>Teknoloji Güncellemeleri:</strong> Yeni teknolojilerle sistemin sürekli olarak güncellenmesi.</li>
+                        <li><strong>Toplum Bilinçlendirme:</strong> Enerji tasarrufu konusunda halkın bilinçlendirilmesi için kampanyalar düzenlenmesi.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <div class="modal fade" id="bahceParkModal" tabindex="-1" role="dialog" aria-labelledby="bahceParkModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bahceParkTitle">Halk Bahçeleri ve Toplum Parkları</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Halk Bahçeleri ve Toplum Parkları Projesi, şehir sakinlerinin doğayla iç içe zaman geçirebileceği, dinlenebileceği ve spor yapabileceği alanlar oluşturmayı hedefler. Bu projenin amacı, kent yaşamında yeşil alanların artırılması ve halkın refahını artırmaktır.</p>
+                    
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Yeşil Alan Artışı:</strong> Şehirdeki yeşil alan miktarını artırarak doğayla iç içe yaşamı teşvik etmek.</li>
+                        <li><strong>Halk Sağlığı ve Refahı:</strong> Parklar aracılığıyla halkın fiziksel ve ruhsal sağlığını desteklemek.</li>
+                        <li><strong>Sosyal Etkileşim:</strong> Toplum parkları aracılığıyla insanların bir araya gelip sosyal etkileşimi artırmak.</li>
+                        <li><strong>Eğitim ve Etkinlikler:</strong> Parklarda çeşitli eğitim ve kültürel etkinlikler düzenleyerek toplum katılımını sağlamak.</li>
+                    </ul>
+                    
+                    <h5>Park Türleri ve Özellikleri</h5>
+                    <ul>
+                        <li><strong>Rekreasyon Alanları:</strong> Yürüyüş yolları, koşu parkurları ve bisiklet yolları gibi spor aktiviteleri için uygun alanlar.</li>
+                        <li><strong>Açık Hava Fitness Alanları:</strong> Fitness ekipmanları ve egzersiz alanları.</li>
+                        <li><strong>Çocuk Oyun Alanları:</strong> Çocuklar için güvenli ve eğlenceli oyun alanları.</li>
+                        <li><strong>Piknik ve Dinlenme Alanları:</strong> Piknik masaları, oturma bankları ve dinlenme alanları.</li>
+                        <li><strong>Kültürel Etkinlik Sahaları:</strong> Açık hava konser ve etkinlikler için düzenlenmiş sahalar.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>Planlama ve Tasarım:</strong> Parkların konumlandırılması ve tasarım aşamaları.</li>
+                        <li><strong>İnşaat:</strong> Parkların yapımı ve peyzaj düzenlemeleri.</li>
+                        <li><strong>Ekipman ve Donatılar:</strong> Oyun alanları, fitness ekipmanları ve diğer donatıların kurulumu.</li>
+                        <li><strong>Çevre Düzenlemesi:</strong> Parkların çevre düzenlemelerinin yapılması.</li>
+                        <li><strong>Açılış ve Etkinlikler:</strong> Parkların resmi açılışı ve toplum etkinliklerinin düzenlenmesi.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Genişletme:</strong> Yeni park alanlarının oluşturulması ve mevcut parkların bakım ve geliştirilmesi.</li>
+                        <li><strong>Eğitim Programları:</strong> Parklarda çeşitli eğitim ve sağlık programlarının düzenlenmesi.</li>
+                        <li><strong>Sürdürülebilirlik:</strong> Parkların sürdürülebilir bakımı ve yönetimi için stratejiler geliştirilmesi.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="genclikKafeModal" tabindex="-1" role="dialog" aria-labelledby="genclikKafeModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="genclikKafeTitle">Gençlik Kafesi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Gençlik Kafesi Projesi, gençler için sosyal bir buluşma ve etkileşim noktası olarak tasarlanmıştır. Bu proje, gençlerin bir araya gelip sosyalleşebileceği, kültürel etkinliklere katılabileceği ve eğlenceli vakit geçirebileceği bir ortam sunmayı amaçlar.</p>
+                    
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Gençler için Güvenli Alan:</strong> Gençlerin güvenli bir ortamda vakit geçirebileceği bir mekan oluşturmak.</li>
+                        <li><strong>Sosyal Etkileşim:</strong> Gençler arasındaki sosyal etkileşimi artırmak ve toplumda aktif bir rol almalarını teşvik etmek.</li>
+                        <li><strong>Kültürel ve Eğitim Programları:</strong> Gençlere yönelik kültürel etkinlikler, atölye çalışmaları ve eğitim programları düzenlemek.</li>
+                        <li><strong>Yaratıcı İfade:</strong> Gençlerin yaratıcılıklarını sergileyebilecekleri bir platform sağlamak.</li>
+                    </ul>
+                    
+                    <h5>Kafe Özellikleri</h5>
+                    <ul>
+                        <li><strong>Oyun ve Eğlence Alanları:</strong> Bilardo, langırt gibi oyunlar ve eğlenceli aktivite alanları.</li>
+                        <li><strong>Kültürel Etkinlikler:</strong> Film gösterimleri, konserler, şiir dinletileri gibi etkinlikler için düzenlenmiş sahne.</li>
+                        <li><strong>Kafe ve Dinlenme Alanları:</strong> Kahve, çay gibi içeceklerin servis edildiği oturma alanları.</li>
+                        <li><strong>Çalışma ve Toplantı Odaları:</strong> Gençlerin ders çalışabileceği, grup çalışmaları yapabileceği odalar.</li>
+                        <li><strong>Sosyal Sorumluluk Projeleri:</strong> Toplumsal farkındalığı artırmak için çeşitli sosyal sorumluluk projeleri.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>Planlama ve Konsept Tasarım:</strong> Kafenin konsept tasarımı ve iç mekan planlaması.</li>
+                        <li><strong>İnşaat ve Dekorasyon:</strong> Kafe alanlarının inşası ve iç dekorasyon çalışmaları.</li>
+                        <li><strong>Ekipman ve Mobilya Kurulumu:</strong> Oyun makineleri, mobilyaların ve ekipmanların kurulumu.</li>
+                        <li><strong>Açılış ve Tanıtım:</strong> Kafenin resmi açılışı ve tanıtım etkinlikleri.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Genişleme ve Yenilikler:</strong> Yeni şubeler açarak kafe konseptini genişletmek ve yenilikler getirmek.</li>
+                        <li><strong>Gençlerle İşbirlikleri:</strong> Gençlerin projeye katılımını sağlayacak işbirlikleri ve ortak etkinlikler.</li>
+                        <li><strong>Sosyal Girişimler:</strong> Gençlerin yönetimine ve işletmesine daha fazla dahil olacak sosyal girişim projeleri.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sehirKutuphaneModal" tabindex="-1" role="dialog" aria-labelledby="sehirKutuphaneModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sehirKutuphaneTitle">Şehir Kütüphanesi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Proje Hakkında</h5>
+                    <p>Şehir Kütüphanesi Projesi, şehir sakinlerine geniş bir kitap koleksiyonu ve kültürel etkinlikler sunan bir merkez olarak tasarlanmıştır. Bu proje, bilgiye erişimi kolaylaştırmak, okuma alışkanlığını teşvik etmek ve toplumun bilgi düzeyini artırmak amacıyla kurulmuştur.</p>
+                    
+                    <h5>Amaçlar ve Hedefler</h5>
+                    <ul>
+                        <li><strong>Geniş Kütüphane Koleksiyonu:</strong> Çeşitli konularda geniş bir kitap ve dijital yayın koleksiyonu sunmak.</li>
+                        <li><strong>Okuma ve Eğitim:</strong> Okuma alışkanlığını teşvik etmek ve eğitim programları ile bilgi düzeyini artırmak.</li>
+                        <li><strong>Kültürel Etkinlikler:</strong> Yazar söyleşileri, kitap imza günleri, atölye çalışmaları gibi kültürel etkinlikler düzenlemek.</li>
+                        <li><strong>Toplumsal Katılım:</strong> Toplumun her kesiminden insanların katılımını sağlamak ve kütüphane hizmetlerine erişimi kolaylaştırmak.</li>
+                    </ul>
+                    
+                    <h5>Kütüphane Özellikleri</h5>
+                    <ul>
+                        <li><strong>Kitap Koleksiyonu:</strong> Farklı konularda zenginleştirilmiş kitap ve dergi koleksiyonu.</li>
+                        <li><strong>Çalışma Alanları:</strong> Bireysel çalışma odaları, grup çalışma masaları ve internet erişimi sağlayan bilgisayarlar.</li>
+                        <li><strong>Çocuk ve Gençlik Bölümü:</strong> Çocuklar ve gençler için özel olarak tasarlanmış okuma ve etkinlik alanları.</li>
+                        <li><strong>Sanat Galerisi ve Kültürel Salon:</strong> Sanat sergileri ve kültürel etkinlikler için düzenlenmiş salonlar.</li>
+                    </ul>
+                    
+                    <h5>Proje Aşamaları</h5>
+                    <ol>
+                        <li><strong>Planlama ve Tasarım:</strong> Kütüphane alanlarının planlanması, iç mekan tasarımı ve teknolojik altyapının belirlenmesi.</li>
+                        <li><strong>İnşaat ve Donanım:</strong> Kütüphane binasının inşası, mobilya ve teknolojik donanımın kurulumu.</li>
+                        <li><strong>Koleksiyon Yönetimi:</strong> Kitap ve dijital yayınların kataloglanması ve kütüphane yönetim sisteminin kurulması.</li>
+                        <li><strong>Açılış ve Etkinlikler:</strong> Kütüphanenin resmi açılışı ve kültürel etkinliklerin düzenlenmesi.</li>
+                    </ol>
+                    
+                    <h5>Gelecekteki Planlar</h5>
+                    <ul>
+                        <li><strong>Teknolojik Gelişmeler:</strong> Dijital yayınlar ve e-kitap koleksiyonunu genişleterek teknolojiye uyumlu hizmetler sunmak.</li>
+                        <li><strong>Toplum Katılımı:</strong> Daha fazla toplum etkinliği ve eğitim programı düzenlemek.</li>
+                        <li><strong>Genişleme ve Şube Açılışları:</strong> Şehrin farklı bölgelerinde yeni kütüphane şubeleri açarak erişimi artırmak.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer start -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Navigasyon Linkleri -->
+                <div class="col-md-4 text-left mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="./index.html" class="nav-link">Anasayfa</a>
+                            <a href="./index.html#hakkimizda" class="nav-link">Hakkımızda</a>
+                            <a href="./index.html#hizmetlerimiz" class="nav-link">Hizmetler</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="./index.html#haberlerveduyurular" class="nav-link">Duyurular ve Haberler</a>
+                            <a href="./index.html#iletisim" class="nav-link">İletişim</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="col-md-4 text-center mt-5">
+                    <div> &copy; 2024 E-Belediye. Tüm Hakları Saklıdır.</div>
+                </div>
+                <!-- İletişim Bilgisi -->
+                <div class="col-md-4 text-right mt-5">
+                    <div><i class="fa fa-envelope mr-2"></i>info@ebelediye.com</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>
